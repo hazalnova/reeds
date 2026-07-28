@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Pond reed clumps &mdash; three.js</title>
+		<link
+			rel="icon"
+			href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 31V9M16 15c-5-2-7-6-7-11 5 1 7 5 7 11zm0 3c5-2 7-6 7-11-5 1-7 5-7 11z' stroke='%236f9f3f' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"
+		/>
+		<style>
+			:root {
+				color-scheme: dark;
+				font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+			}
+			* { box-sizing: border-box; }
+			html, body { height: 100%; margin: 0; background: #0d1512; }
+			canvas { display: block; }
+
+			#ui {
+				position: fixed;
+				top: 16px;
+				left: 16px;
+				max-width: 300px;
+				padding: 14px 16px;
+				border-radius: 10px;
+				background: rgba(10, 20, 16, 0.72);
+				backdrop-filter: blur(8px);
+				border: 1px solid rgba(160, 200, 150, 0.18);
+				color: #dceccc;
+				font-size: 13px;
+				line-height: 1.5;
+				user-select: none;
+			}
+			#ui h1 { margin: 0 0 8px; font-size: 14px; font-weight: 600; letter-spacing: 0.01em; }
+			#ui p { margin: 0 0 10px; color: #9fb894; font-size: 12px; }
+			#ui .views { display: flex; gap: 6px; margin-bottom: 10px; }
+			#ui button {
+				flex: 1;
+				padding: 6px 8px;
+				font: inherit;
+				font-size: 12px;
+				color: #dceccc;
+				background: rgba(120, 170, 110, 0.14);
+				border: 1px solid rgba(160, 200, 150, 0.28);
+				border-radius: 6px;
+				cursor: pointer;
+			}
+			#ui button:hover { background: rgba(120, 170, 110, 0.26); }
+			#ui button[aria-pressed="true"] {
+				background: rgba(150, 200, 120, 0.34);
+				border-color: rgba(190, 230, 170, 0.55);
+			}
+			#stats { color: #7d9575; font-size: 11px; font-variant-numeric: tabular-nums; }
+			#stats b { color: #b9d0ac; font-weight: 600; }
+		</style>
+	</head>
+	<body>
+		<div id="ui">
+			<h1>Pond reed clumps</h1>
+			<p>Four clump variants, each 4&ndash;10 stems, instanced with random yaw, scale and lean.</p>
+			<div class="views">
+				<button id="view-pond" aria-pressed="true">Pond</button>
+				<button id="view-specimens" aria-pressed="false">Specimens</button>
+			</div>
+			<div id="stats"></div>
+		</div>
+		<script type="module" src="/src/demo.js"></script>
+	</body>
+</html>
