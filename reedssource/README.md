@@ -130,3 +130,26 @@ The demo is static by design. Because the stalks are already subdivided
 vertically and every clump's pivot is at its root, wind sway is a natural next
 step: `onBeforeCompile` on the shared material, displacing by a function of
 `position.y` so the base stays planted and the tips move most.
+
+
+## Deployment
+
+The demo is a static Vite build, so any static host works. The app lives in this `reedssource/` directory, so point your host's root or base directory here.
+
+Build locally:
+
+```
+npm install
+npm run build
+npm run preview
+```
+
+### Vercel (recommended)
+
+Import the repo at vercel.com via Add New then Project. Set the Root Directory to `reedssource`. Vercel auto-detects Vite (build `npm run build`, output `dist`). Deploy, and pushes to `main` will auto-deploy while pull requests get preview URLs.
+
+### Other hosts
+
+Cloudflare Pages and Netlify work the same way: set the base directory to `reedssource`, build with `npm run build`, and publish `dist`. For GitHub Pages, build from `reedssource/` via a GitHub Action and publish `reedssource/dist`.
+
+A `vite.config.js` with `base: './'` keeps asset paths relative, so the same build works whether it is served from a domain root or a subpath.
